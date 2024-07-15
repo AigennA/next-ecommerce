@@ -9,18 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.3",
+    "@heroicons/vue": "^2.1.3",
+    "@wix/bookings": "^1.0.387",
+    "@wix/ecom": "^1.0.598",
+    "@wix/members": "^1.0.86",
+    "@wix/redirects": "^1.0.48",
+    "@wix/sdk": "^1.9.8",
+    "@wix/stores": "^1.0.154",
+    "isomorphic-dompurify": "^2.12.0",
+    "js-cookie": "^3.0.5",
+    "next": "14.2.2",
     "react": "^18",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18",
-    "next": "14.2.2"
+    "react-icons": "^5.2.1",
+    "react-router-dom": "^6.23.1",
+    "timeago.js": "^4.0.2",
+    "vercel": "^34.3.0",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@hint/hint-no-inline-styles": "^1.0.18",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "autoprefixer": "^10.4.19",
     "eslint": "^8",
-    "eslint-config-next": "14.2.2"
+    "eslint-config-next": "14.2.2",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5"
   }
 }

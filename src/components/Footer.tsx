@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-teal-100 text-sm mt-24">
+    <div className="py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-orange-100 text-sm mt-24">
       {/* TOP */}
       <div className="flex flex-col md:flex-row justify-between gap-24 text-center md:text-left">
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8 items-center md:items-start">
           <Link href="/">
-            <div className="text-2xl font-semibold tracking-wide">LAMMAZON</div>
+            <div className="text-4xl text-blue-900 font-semibold tracking-wide">lammazon</div>
           </Link>
           <p>Doftaheden 46, Central Drottninghome 90210 Linkoping, Sweden</p>
           <span className="font-semibold">contact@lammazon.com</span>
@@ -78,7 +78,7 @@ const Footer = () => {
       </div>
       {/* BOTTOM */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
-        <div className="text-center md:text-left">© 2024 Lammazon Shop. All rights reserved.</div>
+        {/*<div className="text-center md:text-left">© 2024 Lammazon Shop. All rights reserved.</div>*/}
         
         {/*<div className="flex flex-col gap-8 md:flex-row items-center">
           <div className="text-center md:text-left">

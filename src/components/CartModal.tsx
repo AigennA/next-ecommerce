@@ -103,7 +103,7 @@ const CartModal = () => {
           {/* BOTTOM */}
           
           <div className="">
-            <div className="bg-teal-200 flex items-center justify-between font-semibold">
+            <div className="bg-orange-100 flex items-center justify-between font-semibold">
               <span className="">Subtotal</span>
               <span className="">${cart.subtotal.amount}</span>
             </div>
@@ -111,7 +111,7 @@ const CartModal = () => {
               Shipping and taxes calculated at checkout.
             </p>
             <div className="flex justify-between text-sm">
-              <button className="bg-teal-200 rounded-md py-3 px-4 ring-1 ring-gray-300">
+              <button className="bg-orange-100 rounded-md py-3 px-4 ring-1 ring-gray-300">
                 View Cart
               </button>
               <button

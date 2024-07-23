@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 // import { Input } from "postcss";
+import Privacy from "../app/legal-privacy/page";
 
 const Footer = () => {
   return (
-    <div className="py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-orange-100 text-sm mt-24">
+    <div className="py-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-emerald-600 text-sm mt-24">
       {/* TOP */}
-      <div className="flex flex-col md:flex-row justify-between gap-24 text-center md:text-left">
+      <div className="flex flex-col md:flex-row justify-between gap-24 text-center text-black md:text-left">
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8 items-center md:items-start">
           <Link href="/">
@@ -22,7 +23,7 @@ const Footer = () => {
         </div>
         {/* CENTER */}
         <div className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-8 lg:gap-0 lg:justify-between text-center md:text-left">
-          <div className="flex flex-col w-full lg:w-1/3 gap-4">
+          <div className="flex flex-col w-full lg:w-1/2 gap-4">
             <h1 className="font-medium text-lg mb-4">COMPANY</h1>
             <div className="flex flex-col gap-4">
               <Link href="/about">About Us</Link>
@@ -33,7 +34,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col w-full lg:w-1/3 gap-4">
+          {/*<div className="flex flex-col w-full lg:w-1/3 gap-4">
             <h1 className="font-medium text-lg mb-4">SHOP</h1>
             <div className="flex flex-col gap-4">
               <Link href="/new-arrivals">New Arrivals</Link>
@@ -42,9 +43,9 @@ const Footer = () => {
               <Link href="/women">Women</Link>
               <Link href="/products">All Products</Link>
             </div>
-          </div>
+          </div>*/}
 
-          <div className="flex flex-col w-full lg:w-1/3 gap-4">
+          <div className="flex flex-col w-full lg:w-1/2 gap-4">
             <h1 className="font-medium text-lg mb-4">HELP</h1>
             <div className="flex flex-col gap-4">
               <Link href="/customer-service">Customer Service</Link>

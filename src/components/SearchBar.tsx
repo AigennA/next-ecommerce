@@ -17,7 +17,7 @@ const SearchBar = () => {
 
   return (
     <form 
-      className="flex items-center  bg-gray-200 p-1 rounded-md shadow-md"
+      className="flex items-center  bg-gray-100 p-1 rounded-md shadow-md"
       onSubmit={handleSearch}
     >
       <div className="relative flex items-center flex-1">

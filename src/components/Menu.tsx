@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import Link from "next/link";
-
+import About from "../app/about/page";
 
 const Menu = () => {
 
@@ -24,10 +24,11 @@ const Menu = () => {
                         <Link href="/">HomePage</Link>
                         <Link href="/">Shop</Link>
                         <Link href="/">Deals</Link>
-                        <Link href="/">About</Link>
-                        <Link href="/">Contact</Link>
+                        <Link href="/about">About</Link>
+                       
+                        <Link href="/contact">Contact</Link>
                         <Link href="/">Logout</Link>
-                        <Link href="/">Cart 1</Link>   
+                        <Link href="/giftcard">Gift Card</Link>   
                    </div>
                 )}
               </div>       

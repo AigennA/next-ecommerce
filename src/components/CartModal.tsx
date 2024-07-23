@@ -103,7 +103,7 @@ const CartModal = () => {
           {/* BOTTOM */}
           
           <div className="">
-            <div className="bg-orange-100 flex items-center justify-between font-semibold">
+            <div className="bg-emerald-300 flex items-center justify-between font-semibold">
               <span className="">Subtotal</span>
               <span className="">${cart.subtotal.amount}</span>
             </div>

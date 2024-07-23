@@ -9,11 +9,11 @@ const NavIcons = dynamic(() => import("./NavIcons"), { ssr: false });
 
 const Navbar = () => {
   return (
-    <div className="bg-orange-100 h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative ">
+    <div className="bg-emerald-600 h-20 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative ">
       {/* MOBILE */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
-          <div className="text-3xl font-semibold text-purple-900 tracking-wide">lammazon</div>
+          <div className="text-3xl font-semibold text-blue-900 tracking-wide">lammazon</div>
         </Link>
         <Menu />
       </div>
@@ -27,10 +27,10 @@ const Navbar = () => {
           </Link>
           <div className="hidden xl:flex gap-4">
             <Link href="/">Homepage</Link>
-            <Link href="http://localhost:3001/list?cat=all-products">Shop</Link>
+            <Link href="/">Shop</Link>
             <Link href="/">Deals</Link>
-            <Link href="http://localhost:3001/about">About</Link>
-            <Link href="http://localhost:3001/contact">Contact</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
         {/* RIGHT */}

@@ -1,3 +1,4 @@
+// src/components/ProductList.tsx
 import { wixClientServer } from "@/lib/wixClientServer";
 import { products } from "@wix/stores";
 import Image from "next/image";
@@ -7,6 +8,16 @@ import Pagination from "./Pagination";
 
 const PRODUCT_PER_PAGE = 8;
 
+interface SearchParams {
+    name?: string;
+    type?: "physical" | "digital";
+    min?: number;
+    max?: number;
+    page?: number;
+    sort?: string;
+    cat?: string;
+}
+
 const ProductList = async ({
     categoryId,
     limit,
@@ -14,7 +25,7 @@ const ProductList = async ({
 }: {
     categoryId: string;
     limit?: number;
-    searchParams?: any;
+    searchParams?: SearchParams;
 }) => {
     const wixClient = await wixClientServer();
 
@@ -22,26 +33,27 @@ const ProductList = async ({
         .startsWith("name", searchParams?.name || "")
         .eq("collectionIds", categoryId)
         .hasSome("productType", [searchParams?.type || "physical", "digital"])
-        .gt("priceData.price", searchParams?.min || 0)
-        .lt("priceData.price", searchParams?.max || 999999)
-        .limit(limit || PRODUCT_PER_PAGE)
-        .skip(
-            searchParams?.page
-                ? parseInt(searchParams.page) * (limit || PRODUCT_PER_PAGE)
-                : 0
-        );
+        .gt("priceData.price", searchParams?.min ?? 0)
+        .lt("priceData.price", searchParams?.max ?? 999999)
+        .limit(limit ?? PRODUCT_PER_PAGE)
+        .skip(searchParams?.page ? (parseInt(searchParams.page.toString(), 10) * (limit ?? PRODUCT_PER_PAGE)) : 0);
 
     if (searchParams?.sort) {
-        const [sortType, sortBy] = searchParams.sort.split("");
-
+        const [sortType, sortBy] = searchParams.sort.split("_");
         if (sortType === "asc") {
-            productQuery = productQuery.ascending(sortBy);
+            productQuery.ascending(sortBy);
         } else if (sortType === "desc") {
-            productQuery = productQuery.descending(sortBy);
+            productQuery.descending(sortBy);
         }
     }
 
-    const res = await productQuery.find();
+    let res;
+    try {
+        res = await productQuery.find();
+    } catch (error) {
+        console.error("Failed to fetch products", error);
+        return <div>Error fetching products. Please try again later.</div>;
+    }
 
     return (
         <div className="mt-12 flex gap-x-8 gap-y-16 justify-between flex-wrap">
@@ -54,7 +66,7 @@ const ProductList = async ({
                     <div className="relative w-full h-80">
                         <Image
                             src={product.media?.mainMedia?.image?.url || "/product.png"}
-                            alt=""
+                            alt={product.name || "Product image"}
                             fill
                             sizes="25vw"
                             className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity ease duration-1000"
@@ -62,7 +74,7 @@ const ProductList = async ({
                         {product.media?.items && (
                             <Image
                                 src={product.media?.items[1]?.image?.url || "/product.png"}
-                                alt=""
+                                alt={product.name || "Product image"}
                                 fill
                                 sizes="25vw"
                                 className="absolute object-cover rounded-md"
